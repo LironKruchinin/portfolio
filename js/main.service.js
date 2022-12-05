@@ -8,8 +8,6 @@ function getProjects() {
     return gProjects
 }
 
-
-
 function _createProjects() {
     var projects = []
                 //_createProj(id, name, title, desc, url, publishDate, ...labels)
