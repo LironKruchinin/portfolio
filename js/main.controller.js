@@ -12,7 +12,8 @@ function onInit() {
 }
 
 function renderPortItem() {
-	var portfolioGrid = $('#portfolio').find('.portfolio-display')
+	var portfolioGrid = $('.portfolio-display')
+    
 	var strHTMLs = getProjects().map(project => 
 	`
     <div class="col-md-4 col-sm-6 portfolio-item">
@@ -22,10 +23,10 @@ function renderPortItem() {
             <i class="fa fa-plus fa-3x"></i>
         </div>
     </div>
-        <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+        <img class="img-fluid" src="img/portfolio/${project.id}-thumbnail.jpg" alt="">
     </a>
         <div class="portfolio-caption">
-            <h4>Threads</h4>
+            <h4>${project.name}</h4>
             <p class="text-muted">Illustration</p>
         </div>
     </div>
@@ -36,7 +37,6 @@ function renderPortItem() {
 
 function renderPortModal() {
     var modalContainer = $('.portfolio-modal-container')
-    var modal = $('')
 
     var strHTMLs = getProjects().map(project => {
         return `
@@ -55,7 +55,7 @@ function renderPortModal() {
                     <!-- Project Details Go Here -->
                     <h2>${project.title}</h2>
                     <p class="item-intro text-muted">${project}</p>
-                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/${project.id}-full.jpg" alt="">
                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
                       dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
                       maiores repudiandae, nostrum, reiciendis facere nemo!</p>
